@@ -1,0 +1,273 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/***************** ROOT AND GLOBAL CODE *******************/
+:root {
+  scroll-behavior: smooth;
+  /* Colors */
+  --accent-color-grey: #747474;
+  --accent-color-lightgrey: #c7c7c7;
+  --accent-color-white: #ffffff;
+  /*--accent-color-dark-blue: #211e3d;
+  --accent-color-cream: #efe9dc;
+  --accent-color-black: #000000;*/
+  /* Typefaces */
+  --display-font: "Poiret One", cursive;
+  --text-font: "Raleway", sans-serif;
+  /*--font-size-small: 10px;*/
+  --font-size-title: 30px;
+  --font-size-text1: 16px;
+  --font-size-subtitle: 20px;
+}
+a {
+  text-decoration: none;
+}
+
+/***************** GRID *******************/
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header nav aside"
+    "home home home"
+    "work work work"
+    "about about about"
+    "contacts contacts contacts"
+    "footer footer footer";
+  grid-template-columns: auto 1fr 10%;
+}
+
+/***************** HEADER *******************/
+header {
+  grid-area: header;
+  margin-top: 20px;
+  padding-left: 20px;
+  display: grid;
+  grid-template: 1fr auto/ auto 1fr;
+}
+header img {
+  width: 82px;
+  grid-column: 1/2;
+  justify-self: center;
+  align-self: center;
+}
+header h1 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: left;
+  font-family: var(--display-font);
+  font-size: var(--font-size-title);
+  align-self: center;
+  padding-left: 10px;
+}
+header h2 {
+  grid-column: 1/2;
+  font-family: var(--display-font);
+  text-align: center;
+}
+/***************** NAV *******************/
+nav {
+  grid-area: nav;
+  justify-self: right;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50vw;
+}
+nav a img {
+  width: 20px;
+  color: var(--accent-color-lightgrey);
+  opacity: 0.4;
+}
+nav span {
+  font-family: var(--display-font);
+  color: var(--accent-color-lightgrey);
+  font-size: var(--font-size-subtitle);
+  text-decoration: none;
+  padding-left: 5px;
+}
+/***************** ASIDE *******************/
+aside {
+  z-index: 1;
+  grid-area: aside;
+  margin-top: 20px;
+  padding-right: 20px;
+  justify-self: right;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 95%;
+}
+aside i {
+  color: var(--accent-color-grey);
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+/***************** HOME *******************/
+#home {
+  grid-area: home;
+  display: grid;
+}
+#home img {
+  width: 80%;
+  justify-self: center;
+}
+#home h2 {
+  text-align: center;
+  font-family: var(--display-font);
+  font-size: var(--font-size-title);
+  background-color: var(--accent-color-white);
+  padding: 5px;
+  margin: -30px 0 30px 0;
+}
+/***************** WORK *******************/
+#work {
+  grid-area: work;
+  background-color: aqua;
+  height: 500px;
+}
+/***************** ABOUT *******************/
+#about {
+  grid-area: about;
+  background-color: rgb(255, 0, 170);
+  height: 500px;
+}
+/***************** CONTACTS *******************/
+#contact {
+  grid-area: contacts;
+  background-color: rgb(0, 255, 13);
+  height: 500px;
+}
+/***************** FOOTER *******************/
+footer {
+  grid-area: footer;
+  background-color: rgb(0, 0, 0);
+  height: 30px;
+}
